@@ -46,14 +46,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/my_name1"
-                android:id="@+id/op_act"
+                android:id="@+id/btnCharge"
                 android:background="@color/blue" />
 
             <Button
                 android:layout_width="107dp"
                 android:layout_height="wrap_content"
                 android:text="@string/my_name2"
-                android:id="@+id/btnop2"
+                android:id="@+id/btnCheck"
                 android:background="@color/blue"
                 android:layout_marginTop="10dp" />
 
