@@ -48,7 +48,7 @@
             android:editable="false"
             android:elegantTextHeight="false"
             android:forceHasOverlappingRendering="false"
-            android:layout_weight="0.1"
+
             android:contextClickable="false"
             android:textColor="@color/switch_thumb_disabled_material_light"
             android:text="@string/card"
@@ -69,7 +69,7 @@
                 android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
             <Button
-                android:layout_width="107dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/inquire_balance"
                 android:id="@+id/btnCheck"
@@ -78,10 +78,10 @@
                 android:textColor="@color/abc_primary_text_material_dark" />
 
             <Button
-                android:layout_width="107dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/contact_me"
-                android:id="@+id/btnContactMe"
+                android:id="@+id/button"
                 android:background="@color/blue"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/abc_primary_text_material_dark" />

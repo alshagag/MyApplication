@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="card">Enter your card number</string>
+    <string name="recharge">recharge</string>
+    <string name="inquire_balance">Inquire balance</string>
+    <string name="contact_me">Contact me</string>
+    <string name="settings">Settings</string>
+</resources>

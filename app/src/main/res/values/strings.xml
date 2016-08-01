@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">تطبيقي</string>
     <string name="card">أدخل رقم البطاقة</string>
     <string name="recharge">شحن الرصيد</string>
     <string name="inquire_balance">إستعلام عن الرصيد</string>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">
-                 تطبيقي
-    </string>
-    <string name="home">
-        الرئيسية
-    </string>
+    <string name="app_name">تطبيقي</string>
+    <string name="card">أدخل رقم البطاقة</string>
+    <string name="recharge">شحن الرصيد</string>
+    <string name="inquire_balance">إستعلام عن الرصيد</string>
+    <string name="contact_me">اتصل بي</string>
+    <string name="settings">إعدادات</string>
 </resources>
