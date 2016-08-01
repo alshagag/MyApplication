@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/my_name1"
                 android:id="@+id/btnCharge"
-                android:background="@color/blue" />
+                android:background="@color/blue"
+                android:textColor="@color/abc_background_cache_hint_selector_material_light" />
 
             <Button
                 android:layout_width="107dp"
@@ -55,7 +56,8 @@
                 android:text="@string/my_name2"
                 android:id="@+id/btnCheck"
                 android:background="@color/blue"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:textColor="@color/abc_background_cache_hint_selector_material_light" />
 
         </LinearLayout>
 
