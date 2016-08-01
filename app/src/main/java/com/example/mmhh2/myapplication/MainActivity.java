@@ -2,11 +2,15 @@ package com.example.mmhh2.myapplication;
 
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private long ID = 0;
     public String sCharge;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnCheck = (Button) findViewById(R.id.btnCheck);
         numCard = (EditText) findViewById(R.id.numCard);
         mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
+
 
 
         numCard.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
                 super.onRequestPermissionsResult(requestCode,permissions,grantResults);
         }
     }
+
+
 }
 
 
