@@ -1,8 +1,6 @@
 package com.example.mmhh2.myapplication;
 
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
