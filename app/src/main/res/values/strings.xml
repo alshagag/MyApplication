@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="home">Home</string>
-    <string name="my_name1">شحن الرصيد</string>
-    <string name="my_name2">إستعلام عن الرصيد</string>
-    <string name="my_name3">اتصل بي</string>
-    <string name="my_name4">إعدادات</string>
+    <string name="card">أدخل رقم البطاقة</string>
+    <string name="recharge">شحن الرصيد</string>
+    <string name="inquire_balance">إستعلام عن الرصيد</string>
+    <string name="contact_me">اتصل بي</string>
+    <string name="settings">إعدادات</string>
 </resources>

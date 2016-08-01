@@ -9,4 +9,10 @@
 
     </style>
 
+    <style name="TextThame" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:color">#fff000</item>
+        <item name="android:alpha">0.5</item>
+        
+    </style>
 </resources>

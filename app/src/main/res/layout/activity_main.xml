@@ -26,15 +26,32 @@
             android:layout_gravity="center_horizontal" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/numCard"
             android:layout_gravity="center_horizontal"
             android:padding="7dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:linksClickable="false"
+            android:longClickable="false"
+            android:nestedScrollingEnabled="false"
+            android:textIsSelectable="false"
+            android:textSize="15dp"
+            android:allowUndo="false"
+            android:autoText="false"
+            android:clickable="false"
+            android:editable="false"
+            android:elegantTextHeight="false"
+            android:forceHasOverlappingRendering="false"
+            android:layout_weight="0.1"
+            android:contextClickable="false"
+            android:textColor="@color/switch_thumb_disabled_material_light"
+            android:text="@string/card"
+            android:background="@android:drawable/editbox_background_normal" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -45,19 +62,28 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/my_name1"
+                android:text="@string/recharge"
                 android:id="@+id/btnCharge"
                 android:background="@color/blue"
-                android:textColor="@color/abc_background_cache_hint_selector_material_light" />
+                android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
             <Button
                 android:layout_width="107dp"
                 android:layout_height="wrap_content"
-                android:text="@string/my_name2"
+                android:text="@string/inquire_balance"
                 android:id="@+id/btnCheck"
                 android:background="@color/blue"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/abc_background_cache_hint_selector_material_light" />
+                android:textColor="@color/abc_primary_text_material_dark" />
+
+            <Button
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_me"
+                android:id="@+id/button"
+                android:background="@color/blue"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/abc_primary_text_material_dark" />
 
         </LinearLayout>
 
