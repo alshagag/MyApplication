@@ -24,12 +24,19 @@ public class MainActivity extends AppCompatActivity {
         numCard.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-                    EditText num = (EditText)view.findViewById(R.id.numCard);
-                    num.setText("");
-                    return true;
+                    EditText num = (EditText) view.findViewById(R.id.numCard);
+                    if (!num.getText().toString().isEmpty()) {
+                        if (!num.getText().toString().matches("[0-9]+")) {
+                            num.setText("");
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
                 }
+
 
                 return false;
             }
@@ -39,11 +46,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String numstring = numCard.getText().toString();
                 if(!numstring.isEmpty()){
-                    if (numstring.length() >= 14){
-                        long numberCard = Long.parseLong(numstring);
+                    if(numstring.matches("[0-9]+")) {
+                        if (numstring.length() >= 14) {
+                            long numberCard = Long.parseLong(numstring);
+                        } else {
+                            Toast.makeText(getBaseContext(), "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else {
-                        Toast.makeText(getBaseContext(),"رقم البطاقة قصير جدا",Toast.LENGTH_SHORT).show();
+                    else{
+                        numCard.setText("");
+                        Toast.makeText(getBaseContext(), "تأكد من كتابة رقم البطاقة", Toast.LENGTH_SHORT).show();
                     }
 
                 }
