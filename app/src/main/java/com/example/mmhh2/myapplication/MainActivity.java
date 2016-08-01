@@ -3,78 +3,69 @@ package com.example.mmhh2.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
-//test1
+
 
 public class MainActivity extends AppCompatActivity {
-    public Button btnCharge,btnCheck;
-    public EditText numCard;
+    protected Button btnCharge, btnCheck;
+    protected EditText numCard;
+    protected RelativeLayout mainActivity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnCharge = (Button)findViewById(R.id.btnCharge);
-        btnCheck = (Button)findViewById(R.id.btnCheck);
-        numCard = (EditText)findViewById(R.id.numCard);
+        btnCharge = (Button) findViewById(R.id.btnCharge);
+        btnCheck = (Button) findViewById(R.id.btnCheck);
+        numCard = (EditText) findViewById(R.id.numCard);
+        mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
 
-        numCard.setOnTouchListener(new View.OnTouchListener() {
+
+        numCard.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-
-                    EditText num = (EditText) view.findViewById(R.id.numCard);
-                    if (!num.getText().toString().isEmpty()) {
-                        if (!num.getText().toString().matches("[0-9]+")) {
-                            num.setText("");
-                            return true;
-                        } else {
-                            return false;
-                        }
+            public void onClick(View view) {
+                if (!numCard.getText().toString().isEmpty()) {
+                    if (!numCard.getText().toString().matches("[0-9]+")) {
+                        numCard.setText("");
                     }
                 }
 
-
-                return false;
             }
         });
+
+
         btnCharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String numstring = numCard.getText().toString();
-                if(!numstring.isEmpty()){
-                    if(numstring.matches("[0-9]+")) {
+                if (!numstring.isEmpty()) {
+                    if (numstring.matches("[0-9]+")) {
                         if (numstring.length() >= 14) {
                             long numberCard = Long.parseLong(numstring);
                         } else {
                             Toast.makeText(getBaseContext(), "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                    else{
-                        numCard.setText("");
+                    } else {
                         Toast.makeText(getBaseContext(), "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                     }
 
-                }
-                else {
+                } else {
 
-                    Toast.makeText(getBaseContext(),"لا يوجد رقم بطاقة",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
+
     }
 
 
-
-
-
-
-
 }
+
+
