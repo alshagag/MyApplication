@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnCheck = (Button)findViewById(R.id.btnCheck);
         numCard = (EditText)findViewById(R.id.numCard);
 
-
-        btnCharge.setOnTouchListener(new View.OnTouchListener() {
+        numCard.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction() == MotionEvent.ACTION_UP){
