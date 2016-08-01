@@ -80,7 +80,7 @@
                 android:layout_width="107dp"
                 android:layout_height="wrap_content"
                 android:text="@string/contact_me"
-                android:id="@+id/button"
+                android:id="@+id/btnContactMe"
                 android:background="@color/blue"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/abc_primary_text_material_dark" />
