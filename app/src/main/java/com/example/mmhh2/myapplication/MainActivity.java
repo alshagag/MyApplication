@@ -1,6 +1,8 @@
 package com.example.mmhh2.myapplication;
 
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     public Button btnCharge,btnCheck;
     public EditText numCard;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         numCard.setText("");
-                        Toast.makeText(getBaseContext(), "تأكد من كتابة رقم البطاقة", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                     }
 
                 }
                 else {
-                    Toast.makeText(getBaseContext(),"رقم البطاقة فارغ",Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(getBaseContext(),"لا يوجد رقم بطاقة",Toast.LENGTH_SHORT).show();
                 }
 
             }
