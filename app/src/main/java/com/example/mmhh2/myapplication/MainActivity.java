@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected Button btnCharge, btnCheck, btnSettings;
     protected EditText numCard;
     protected RelativeLayout mainActivity;
-    private static String numberCard,ID,type;
+    private static String numberCard, ID, type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,33 +52,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 numberCard = numCard.getText().toString();
-                if (!numberCard.isEmpty()) {
-                    if (numberCard.matches("[0-9]+")) {
-                        if (numberCard.length() >= 14) {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                        if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
-                                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge);
-                                        }
-
-                                    return;
-                                }
-                            }
-                            Operations.setVariables(numberCard,ID,type);
-                            startActivity(Operations.call(Operations.getNumberCharge()));
-
-                        } else {
-                            Toast.makeText(getBaseContext(), "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
+                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge);
                         }
-                    } else {
-                        Toast.makeText(getBaseContext(), "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
+
+                        return;
                     }
-
-                } else {
-
-                    Toast.makeText(getBaseContext(), "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                 }
-
+                Operations.setVariables(numberCard, ID, type);
+                if (!Operations.checkCharge(MainActivity.this,numberCard)){
+                startActivity(Operations.call(Operations.getNumberCharge()));
+                }
             }
         });
         btnCheck.setOnClickListener(new View.OnClickListener() {
@@ -87,15 +73,19 @@ public class MainActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
-                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire);
+                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire);
 
                         }
 
                         return;
                     }
                 }
-                Operations.setVariables(type);
-                startActivity(Operations.call(Operations.getNumberInquire()));
+
+                    Operations.setVariables(type);
+                    if (!Operations.checkCheck(MainActivity.this)) {
+                        startActivity(Operations.call(Operations.getNumberInquire()));
+                    }
+
 
             }
         });
@@ -103,13 +93,12 @@ public class MainActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,MainSettings.class);
+                Intent i = new Intent(MainActivity.this, MainSettings.class);
                 startActivity(i);
             }
         });
 
     }
-
 
 
     @Override
@@ -121,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Operations.setVariables(numberCard,ID,type);
-                    startActivity(Operations.call(Operations.getNumberCharge()));
+                    Operations.setVariables(numberCard, ID, type);
+                    if (!Operations.checkCharge(MainActivity.this,numberCard)){
+                        startActivity(Operations.call(Operations.getNumberCharge()));
+                    }
 
                 } else {
 
@@ -136,7 +127,9 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Operations.setVariables(type);
-                    startActivity(Operations.call(Operations.getNumberInquire()));
+                    if (!Operations.checkCheck(MainActivity.this)) {
+                        startActivity(Operations.call(Operations.getNumberInquire()));
+                    }
 
 
                 } else {
@@ -148,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             default:
-                super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

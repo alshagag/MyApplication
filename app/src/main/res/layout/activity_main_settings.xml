@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/ID"
             android:layout_margin="20dp" />
 
     </LinearLayout>
@@ -129,26 +129,30 @@
         <RadioButton
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:id="@+id/radioButton"
+            android:id="@+id/rdSTC"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
-            android:drawableLeft="@drawable/stc" />
+            android:drawableLeft="@drawable/stc"
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:id="@+id/radioButton2"
+            android:id="@+id/rdMobily"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
-            android:drawableLeft="@drawable/mobily" />
+            android:drawableLeft="@drawable/mobily"
+            android:checked="false" />
 
         <RadioButton
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:id="@+id/radioButton3"
+            android:id="@+id/rdZain"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
-            android:drawableLeft="@drawable/zian" />
+            android:drawableLeft="@drawable/zian"
+            android:contextClickable="false"
+            android:checked="false" />
     </RadioGroup>
 
 </RelativeLayout>
