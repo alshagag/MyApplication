@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected RelativeLayout mainActivity;
     private static String numberCard, ID, type;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnSettings = (Button) findViewById(R.id.btnSettings);
         numCard = (EditText) findViewById(R.id.numCard);
         mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
+
 
 
         numCard.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                 }
-                Operations.setVariables(numberCard, ID, type);
-                if (!Operations.checkCharge(MainActivity.this,numberCard)){
+                Operations.setVariables(numberCard, ID, type,getBaseContext());
+                if (Operations.checkCharge(getBaseContext(),numberCard)){
                 startActivity(Operations.call(Operations.getNumberCharge()));
                 }
             }
@@ -81,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                    Operations.setVariables(type);
-                    if (!Operations.checkCheck(MainActivity.this)) {
+                    Operations.setVariables(type,getBaseContext());
+                    if (Operations.checkCheck(getBaseContext())) {
                         startActivity(Operations.call(Operations.getNumberInquire()));
                     }
 
@@ -110,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Operations.setVariables(numberCard, ID, type);
-                    if (!Operations.checkCharge(MainActivity.this,numberCard)){
+                    Operations.setVariables(numberCard, ID, type,getBaseContext());
+                    if (Operations.checkCharge(getBaseContext(),numberCard)){
                         startActivity(Operations.call(Operations.getNumberCharge()));
                     }
 
@@ -126,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Operations.setVariables(type);
-                    if (!Operations.checkCheck(MainActivity.this)) {
+                    Operations.setVariables(type,getBaseContext());
+                    if (Operations.checkCheck(getBaseContext())) {
                         startActivity(Operations.call(Operations.getNumberInquire()));
                     }
 
