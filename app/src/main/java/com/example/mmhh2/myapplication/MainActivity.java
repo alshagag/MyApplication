@@ -16,8 +16,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
-
-
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 0;
     protected Button btnCharge, btnCheck;
@@ -26,16 +24,14 @@ public class MainActivity extends AppCompatActivity {
     private long ID = 0;
     public String sCharge;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnCharge = (Button)findViewById(R.id.btnCharge);
+        btnCharge = (Button) findViewById(R.id.btnCharge);
         btnCheck = (Button) findViewById(R.id.btnCheck);
         numCard = (EditText) findViewById(R.id.numCard);
         mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
-
 
 
         numCard.setOnClickListener(new View.OnClickListener() {
@@ -51,15 +47,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-       btnCharge.setOnClickListener(new View.OnClickListener() {
+        btnCharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String numstring = numCard.getText().toString();
                 if (!numstring.isEmpty()) {
                     if (numstring.matches("[0-9]+")) {
                         if (numstring.length() >= 14) {
-                            long numberCard = Long.parseLong(numstring);
-                            sCharge = "*1400*" + numberCard + "*" + ID + "#";
+                            sCharge = "*1400*" + numstring + "*" + ID + "#";
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                                         if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
