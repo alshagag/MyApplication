@@ -116,4 +116,39 @@
         android:textSize="30sp"
         android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
 
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_toStartOf="@+id/imageSettings"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:id="@+id/radioButton"
+            android:layout_weight="0.3"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/stc" />
+
+        <RadioButton
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:id="@+id/radioButton2"
+            android:layout_weight="0.3"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/mobily" />
+
+        <RadioButton
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:id="@+id/radioButton3"
+            android:layout_weight="0.3"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/zian" />
+    </RadioGroup>
+
 </RelativeLayout>

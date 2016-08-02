@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge = 0;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire = 1;
-    protected Button btnCharge, btnCheck;
+    protected Button btnCharge, btnCheck, btnSettings;
     protected EditText numCard;
     protected RelativeLayout mainActivity;
     private static String numberCard,ID,type;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnCharge = (Button) findViewById(R.id.btnCharge);
         btnCheck = (Button) findViewById(R.id.btnCheck);
+        btnSettings = (Button) findViewById(R.id.btnSettings);
         numCard = (EditText) findViewById(R.id.numCard);
         mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
 
@@ -96,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
                 Operations.setVariables(type);
                 startActivity(Operations.call(Operations.getNumberInquire()));
 
+            }
+        });
+
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,MainSettings.class);
+                startActivity(i);
             }
         });
 
