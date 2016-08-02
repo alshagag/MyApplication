@@ -2,15 +2,11 @@ package com.example.mmhh2.myapplication;
 
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +15,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import java.util.Locale;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnCharge = (Button) findViewById(R.id.btnCharge);
+        btnCharge = (Button)findViewById(R.id.btnCharge);
         btnCheck = (Button) findViewById(R.id.btnCheck);
         numCard = (EditText) findViewById(R.id.numCard);
         mainActivity = (RelativeLayout) findViewById(R.id.mainLayout);
@@ -55,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnCharge.setOnClickListener(new View.OnClickListener() {
+       btnCharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String numstring = numCard.getText().toString();

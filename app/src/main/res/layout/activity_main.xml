@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/recharge"
-            android:id="@+id/btnRecharge"
+            android:id="@+id/btnCharge"
             android:textColor="@color/abc_primary_text_disable_only_material_dark"
             android:background="@drawable/buttoncolornew" />
 
