@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">تطبيقي</string>
+    <string name="app_name">الشحن المختصر</string>
     <string name="card">أدخل رقم البطاقة</string>
     <string name="recharge">شحن الرصيد</string>
     <string name="inquire_balance">إستعلام عن الرصيد</string>
     <string name="contact_me">اتصل بي</string>
     <string name="settings">إعدادات</string>
+    <string name="idnumber">رقم الهوية :</string>
+    <string name="wohcharging">طريقة الشحن :</string>
+    <string name="network">الشبكة :</string>
+    <string name="viewlive">العرض المباشر</string>
+    <string name="viewcode">اظهر الكود</string>
 </resources>

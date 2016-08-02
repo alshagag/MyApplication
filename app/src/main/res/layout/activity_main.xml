@@ -68,22 +68,23 @@
         android:layout_alignParentEnd="true"
         android:orientation="vertical"
         android:paddingRight="70dp"
-        android:paddingLeft="70dp">
+        android:paddingLeft="70dp"
+        android:weightSum="1">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/recharge"
-            android:id="@+id/btnCharge"
+            android:id="@+id/btnRecharge"
             android:textColor="@color/abc_primary_text_disable_only_material_dark"
-            android:background="@color/blue" />
+            android:background="@drawable/buttoncolornew" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/inquire_balance"
             android:id="@+id/btnCheck"
-            android:background="@color/blue"
+            android:background="@drawable/buttoncolornew"
             android:layout_marginTop="10dp"
             android:textColor="@color/abc_primary_text_material_dark" />
 
@@ -92,7 +93,7 @@
             android:layout_height="wrap_content"
             android:text="@string/contact_me"
             android:id="@+id/btnContact"
-            android:background="@color/blue"
+            android:background="@drawable/buttoncolornew"
             android:layout_marginTop="10dp"
             android:textColor="@color/abc_primary_text_material_dark" />
 
@@ -101,10 +102,13 @@
             android:layout_height="wrap_content"
             android:text="@string/settings"
             android:id="@+id/btnSettings"
-            android:background="@color/blue"
+            android:background="@drawable/buttoncolornew"
             android:layout_marginTop="10dp"
             android:textColor="@color/abc_primary_text_material_dark"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:elegantTextHeight="false"
+            android:contextClickable="false"
+            android:clickable="true" />
 
 
     </LinearLayout>
