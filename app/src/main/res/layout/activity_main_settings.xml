@@ -9,15 +9,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mmhh2.myapplication.MainSettings">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageSettings"
+        android:adjustViewBounds="false"
+        android:background="@drawable/imgae2"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout7"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/idnumber"
+            android:id="@+id/textView"
+            android:textSize="18sp"
+            android:layout_margin="8dp" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView" />
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:layout_marginTop="150dp">
 
         <EditText
             android:layout_width="match_parent"
@@ -27,60 +52,68 @@
             android:id="@+id/editText"
             android:layout_margin="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/wohcharging"
-            android:id="@+id/textView3"
-            android:textSize="25sp"
-            android:textIsSelectable="false" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="7dp">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/viewlive"
-                android:id="@+id/btnViewlive"
-                android:layout_weight="0.5"
-                android:layout_marginLeft="20dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/viewcode"
-                android:layout_weight="0.5"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/btnViewcode" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/network"
-            android:id="@+id/textView2"
-            android:layout_gravity="right" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="29dp"
+        android:id="@+id/linearLayout6"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true">
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/idnumber"
-            android:id="@+id/textView"
-            android:textSize="25sp" />
+            android:text="@string/viewlive"
+            android:id="@+id/btnViewlive"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/viewcode"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/btnViewcode" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/wohcharging"
+        android:id="@+id/textView3"
+        android:textSize="18sp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_alignRight="@+id/linearLayout5"
+        android:layout_alignStart="@+id/linearLayout5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/network"
+        android:id="@+id/textView2"
+        android:layout_gravity="right"
+        android:textSize="18sp"
+        android:layout_below="@+id/linearLayout6"
+        android:layout_alignRight="@+id/linearLayout6"
+        android:layout_alignStart="@+id/linearLayout6"
+        android:layout_marginTop="29dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_icon"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/imageSettings"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
 
 </RelativeLayout>

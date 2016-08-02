@@ -11,4 +11,5 @@
     <string name="network">Mobile Network :</string>
     <string name="viewlive">View Live</string>
     <string name="viewcode">See Code</string>
+    <string name="settings_icon">Settings</string>
 </resources>
