@@ -17,12 +17,12 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 0;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge = 0;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire = 1;
     protected Button btnCharge, btnCheck;
     protected EditText numCard;
     protected RelativeLayout mainActivity;
-    private long ID = 0;
-    public String sCharge;
+    private static String numberCard,ID,type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +50,21 @@ public class MainActivity extends AppCompatActivity {
         btnCharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String numstring = numCard.getText().toString();
-                if (!numstring.isEmpty()) {
-                    if (numstring.matches("[0-9]+")) {
-                        if (numstring.length() >= 14) {
-                            sCharge = "*1400*" + numstring + "*" + ID + "#";
+                numberCard = numCard.getText().toString();
+                if (!numberCard.isEmpty()) {
+                    if (numberCard.matches("[0-9]+")) {
+                        if (numberCard.length() >= 14) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                                         if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
-                                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge);
                                         }
 
                                     return;
                                 }
                             }
-                            call(sCharge);
+                            Operations.setVariables(numberCard,ID,type);
+                            startActivity(Operations.call(Operations.getNumberCharge()));
 
                         } else {
                             Toast.makeText(getBaseContext(), "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
@@ -83,41 +83,52 @@ public class MainActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sCharge = "*1411#";
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         if (!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)) {
-                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE);
+                            requestPermissions(new String[]{Manifest.permission.CALL_PHONE},MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire);
+
                         }
 
                         return;
                     }
                 }
-                call(sCharge);
+                Operations.setVariables(type);
+                startActivity(Operations.call(Operations.getNumberInquire()));
+
             }
         });
 
     }
 
-    protected void call(String num) {
-        Intent iChatge = new Intent(Intent.ACTION_CALL, Uri.fromParts("tel",num,null));
-        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
-            return;
-        }
-        startActivity(iChatge);
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
+            case MY_PERMISSIONS_REQUEST_CALL_PHONE_Charge: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    call(sCharge);
+                    Operations.setVariables(numberCard,ID,type);
+                    startActivity(Operations.call(Operations.getNumberCharge()));
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                }
+                break;
+            }
+            case MY_PERMISSIONS_REQUEST_CALL_PHONE_Inquire: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Operations.setVariables(type);
+                    startActivity(Operations.call(Operations.getNumberInquire()));
+
 
                 } else {
 
