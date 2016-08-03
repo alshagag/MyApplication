@@ -1,13 +1,8 @@
 package com.example.mmhh2.myapplication;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.nfc.TagLostException;
-import android.os.Build;
-import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
 /**
@@ -95,51 +90,57 @@ public class Operations {
     }
 
     public static boolean checkCharge(Context context, String numberCard) {
+        try {
 
-        if (ID == null) {
-            Toast.makeText(context, "لا يوجد رقم هوية", Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            if (ID.length() == 10) {
-                if (!type.equals(null)) {
-                    if (!numberCard.equals(null)) {
-                        if (numberCard.matches("[0-9]+")) {
-                            if (numberCard.length() >= 14) {
-                                return true;
 
+            if (ID == null) {
+                Toast.makeText(context, "لا يوجد رقم هوية", Toast.LENGTH_SHORT).show();
+                return false;
+            } else {
+                if (ID.length() == 10) {
+                    if (!type.equals(null)) {
+                        if (!numberCard.equals(null)) {
+                            if (numberCard.matches("[0-9]+")) {
+                                if (numberCard.length() >= 14) {
+                                    return true;
+
+                                } else {
+                                    Toast.makeText(context, "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
+                                    return false;
+                                }
                             } else {
-                                Toast.makeText(context, "رقم البطاقة قصير جدا", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                                 return false;
                             }
+
                         } else {
+
                             Toast.makeText(context, "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
                             return false;
                         }
 
-                    } else {
-
-                        Toast.makeText(context, "لا يوجد رقم بطاقة", Toast.LENGTH_SHORT).show();
-                        return false;
                     }
 
+                } else {
+                    Toast.makeText(context, "رقم الهوية غير صحيح", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
-
-            } else {
-                Toast.makeText(context, "رقم الهوية غير صحيح", Toast.LENGTH_SHORT).show();
-                return false;
             }
+            return false;
+        } catch (Exception ex) {
+            Toast.makeText(context, "لم تحدد نوع الشريحة", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        return false;
     }
 
     public static boolean checkCheck(Context context) {
         try {
 
 
-        if (!type.equals(null)) {
-            return true;
-        }
-        }catch (Exception ex) {
+            if (!type.equals(null)) {
+                return true;
+            }
+        } catch (Exception ex) {
             Toast.makeText(context, "لم تحدد نوع الشريحة", Toast.LENGTH_SHORT).show();
             return false;
         }

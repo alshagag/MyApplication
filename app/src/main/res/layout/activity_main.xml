@@ -18,9 +18,9 @@
         android:id="@+id/linearLayout4"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
+        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false">
+        android:layout_alignParentEnd="true">
 
         <ImageView
             android:layout_width="150dp"
@@ -62,8 +62,19 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/linearLayout3"
-        android:layout_above="@+id/linearLayout"
+        android:layout_alignTop="@+id/linearLayout2"
         android:layout_alignLeft="@+id/linearLayout"
         android:layout_alignEnd="@+id/linearLayout">
 
