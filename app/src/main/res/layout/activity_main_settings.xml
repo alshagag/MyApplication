@@ -153,20 +153,4 @@
             android:checked="false" />
     </RadioGroup>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"></LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save"
-        android:id="@+id/btnSave"
-        android:textStyle="bold"
-        android:background="#2CC990"
-        android:textColor="#FFFFF7"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
 </RelativeLayout>
