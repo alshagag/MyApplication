@@ -63,7 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout3"
-        android:layout_above="@+id/linearLayout"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/linearLayout4"
         android:layout_alignLeft="@+id/linearLayout"
         android:layout_alignEnd="@+id/linearLayout">
 
@@ -122,9 +123,8 @@
         android:orientation="vertical"
         android:weightSum="1"
         android:id="@+id/linearLayout"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp">
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true">
 
         <Button
             android:layout_width="180dp"
