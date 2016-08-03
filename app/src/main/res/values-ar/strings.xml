@@ -13,6 +13,8 @@
     <string name="settings_icon">الإعدادات</string>
     <string name="save">حفظ</string>
     <string name="noneNetwork">لم تحدد نوع الشريحة</string>
+    <string name="noneCardNum">لا يوجد رقم بطاقة</string>
+    <string name="CardNumShort">رقم البطاقة قصير جداً</string>
     <string name="noneIDumber">لا يوجد رقم هوية</string>
-    <string name="noneCardNum">رقم البطاقة قصير جداً</string>
+    <string name="IDNumIncorrect">رقم الهوية غير صحيح</string>
 </resources>

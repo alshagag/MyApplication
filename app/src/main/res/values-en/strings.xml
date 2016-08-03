@@ -15,5 +15,7 @@
     <string name="save">Save</string>
     <string name="noneNetwork">Did not specify type of the slide</string>
     <string name="noneIDumber">None ID Number</string>
-    <string name="noneCardNum">Card number very short</string>
+    <string name="CardNumShort">Card number very short</string>
+    <string name="noneCardNum">None Card Number</string>
+    <string name="IDNumIncorrect">ID number is incorrect</string>
 </resources>
