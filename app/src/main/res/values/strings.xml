@@ -12,4 +12,5 @@
     <string name="viewcode">اظهر الكود</string>
     <string name="settings_icon">الإعدادات</string>
     <string name="save">حفظ</string>
+    <string name="noneNetwork">لم تحدد نوع الشريحة</string>
 </resources>

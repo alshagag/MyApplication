@@ -13,4 +13,5 @@
     <string name="viewcode">See Code</string>
     <string name="settings_icon">Settings</string>
     <string name="save">Save</string>
+    <string name="noneNetwork">Did not specify type of the slide</string>
 </resources>
