@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/ID"
+            android:id="@+id/editText"
             android:layout_margin="20dp" />
 
     </LinearLayout>
@@ -58,11 +58,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="29dp"
         android:id="@+id/linearLayout6"
         android:layout_below="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true">
+        >
 
         <Button
             android:layout_width="wrap_content"
@@ -104,55 +102,71 @@
         android:layout_below="@+id/linearLayout6"
         android:layout_alignRight="@+id/linearLayout6"
         android:layout_alignStart="@+id/linearLayout6"
-        android:layout_marginTop="29dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings_icon"
         android:id="@+id/textView4"
         android:layout_below="@+id/imageSettings"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
-        android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
+        android:text="@string/settings_icon"
+        android:textStyle="bold"
+        android:textColor="#3E4651" />
 
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_toStartOf="@+id/imageSettings"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="15dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:orientation="horizontal">
 
         <RadioButton
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:id="@+id/rdSTC"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btnStc"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
             android:drawableLeft="@drawable/stc"
             android:checked="false" />
 
         <RadioButton
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:id="@+id/rdMobily"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btnMobily"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
             android:drawableLeft="@drawable/mobily"
             android:checked="false" />
 
         <RadioButton
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:id="@+id/rdZain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnZain"
             android:layout_weight="0.3"
             android:layout_marginLeft="10dp"
-            android:drawableLeft="@drawable/zian"
-            android:contextClickable="false"
+            android:drawableLeft="@drawable/zainsa"
             android:checked="false" />
     </RadioGroup>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:id="@+id/btnSave"
+        android:textStyle="bold"
+        android:background="#2CC990"
+        android:textColor="#FFFFF7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

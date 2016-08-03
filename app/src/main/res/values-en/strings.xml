@@ -12,4 +12,5 @@
     <string name="viewlive">View Live</string>
     <string name="viewcode">See Code</string>
     <string name="settings_icon">Settings</string>
+    <string name="save">Save</string>
 </resources>
